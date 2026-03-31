@@ -3,151 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dynamic Location Theory - Developed at R.A.I.N. Lab">
-  <title>Dynamic Location Theory</title>
+  <meta name="description" content="Full Paper — Dynamic Location Theory">
+  <title>Dynamic Location Theory — Full Paper</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
-    body { font-family: 'Google Sans', sans-serif; }
-    .serif { font-family: 'Noto Serif', serif; }
-    .math-block { overflow-x: auto; background: #f8f9fa; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; }
-    .bibtex { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.875rem; background: #f8f9fa; padding: 1rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; overflow-x: auto; white-space: pre-wrap;}
-  </style>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .title-font { font-family: 'Space Grotesk', sans-serif; }
+    .math { font-size: 1.1rem; }
+    .section-header { font-size: 1.75rem; }
+    .equation { background: #f8fafc; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; margin: 2rem 0; overflow-x: auto; }
+  </style>
 </head>
-<body class="bg-white text-gray-800 antialiased leading-relaxed">
+<body class="bg-zinc-950 text-zinc-200">
 
-  <!-- Header -->
-  <header class="max-w-4xl mx-auto px-6 pt-20 pb-12 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-      Dynamic Location Theory
-    </h1>
-    <p class="text-xl md:text-2xl text-gray-600 mb-6 font-medium">A Unified Frequency-Based Framework for <br> Spatial Position, Temporal Re-Localization, and Informational Retrieval</p>
-    
-    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4 text-lg">
-      <a href="#" class="text-blue-600 hover:underline">Christopher Woodyard</a><sup>1, 2</sup>
-    </div>
-    <div class="flex flex-col items-center justify-center text-gray-600 mb-8 space-y-1">
-      <span><sup>1</sup> Vers3Dynamics</span>
-      <span><sup>2</sup> R.A.I.N. Lab, Washington, D.C.</span>
-    </div>
-
-    <div class="flex flex-wrap justify-center gap-4 mt-8">
-      <a href="137.pdf" target="_blank"
-         class="bg-gray-800 text-white hover:bg-gray-700 font-medium px-5 py-2.5 rounded-full flex items-center gap-2 transition duration-200">
-        <i class="fa-solid fa-file-pdf"></i>
-        <span>Paper</span>
+  <!-- Navbar -->
+  <nav class="sticky top-0 bg-zinc-950 border-b border-zinc-800 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="https://vers3dynamics.com" class="text-2xl font-semibold flex items-center gap-2">
+        <span class="text-emerald-400">Vers3</span>Dynamics
       </a>
-      <a href="https://github.com/topherchris420/dynamic-location-theory" target="_blank"
-         class="bg-gray-800 text-white hover:bg-gray-700 font-medium px-5 py-2.5 rounded-full flex items-center gap-2 transition duration-200">
-        <i class="fa-brands fa-github"></i>
-        <span>Code</span>
-      </a>
-      <a href="https://github.com/topherchris420/james_library" target="_blank"
-         class="bg-gray-800 text-white hover:bg-gray-700 font-medium px-5 py-2.5 rounded-full flex items-center gap-2 transition duration-200">
-        <i class="fa-solid fa-microchip"></i>
-        <span>R.A.I.N. Lab</span>
-      </a>
-      <a href="https://doi.org/10.5281/zenodo.18263032" target="_blank"
-         class="bg-gray-800 text-white hover:bg-gray-700 font-medium px-5 py-2.5 rounded-full flex items-center gap-2 transition duration-200">
-        <i class="fa-brands fa-zenodo"></i>
-        <span>Zenodo</span>
-      </a>
-    </div>
-
-    <div class="mt-12 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-      <video autoplay loop muted playsinline class="w-full h-auto object-cover aspect-video bg-black">
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-    </div>
-  </header>
-
-  <!-- Abstract -->
-  <section class="max-w-4xl mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Abstract</h2>
-    <div class="text-lg text-gray-700 text-justify">
-      <p class="mb-4">
-        This paper unifies spatial localization and temporal re-localization under a single resonance model in which 
-        <strong>location is a property of the object</strong>, selected by resonance between matter and a background scalar field. 
-        Rather than treating position and time as external labels on a spacetime manifold, we encode the spatiotemporal 
-        position of any physical system in the dominant resonance frequency \(\omega_{\rm loc}\) of its coupled 
-        matter-scalar-field state.
-      </p>
-      <p>
-        We define a frequency-parameterized localization operator \(\mathcal{L}\) acting on the extended Hilbert space 
-        \(\mathcal{H}_{\rm sys} \otimes \mathcal{H}_\phi\), derive the driven field-theoretic coupling, and recover standard 
-        quantum mechanics and classical trajectories in the weak-coupling limit. Macroscopic material re-localization remains 
-        energetically prohibitive (\(E_{\rm req} > 10^{45}\) J) while informational re-localization respects Landauer’s bound 
-        and is physically feasible. The framework supplies concrete, falsifiable predictions for atomic-clock interferometry, 
-        matter-wave interferometry, and gravitational-wave detection.
-      </p>
-    </div>
-  </section>
-
-  <hr class="max-w-4xl mx-auto my-8 border-gray-200">
-
-
-
-  <!-- Type I Derivation -->
-  <section class="max-w-4xl mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Type I Re-Localization (Mathematical Core)</h2>
-    <p class="text-lg text-gray-700 mb-6 text-center">
-      The entire framework rests on a clean derivation: because location is an internal resonant property of the object rather than an external coordinate, shifting the object's resonant frequency achieves <strong>instantaneous teleportation (re-localization)</strong> across the scalar field with <strong>no mass-energy displacement through space</strong>. This single equation unifies atomic-clock interferometry, matter-wave anomalies, and the gravitational-wave signature.
-    </p>
-    <div class="math-block text-center text-xl my-8">
-      \[\Delta\phi(t) = \gamma\int_0^t \bigl(\omega_1(t') - \omega_2(t')\bigr)\,dt'\]
-    </div>
-  </section>
-
-  <hr class="max-w-4xl mx-auto my-8 border-gray-200">
-
-  <!-- Predictions -->
-  <section class="max-w-4xl mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold text-center text-gray-900 mb-10">Falsifiable Predictions</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition">
-        <h3 class="font-bold text-gray-900 mb-3 text-center">1. Atomic Clocks</h3>
-        <p class="text-gray-700 text-sm text-center">Differential atomic-clock interferometry measures a relative phase shift of order \(10^{-19}\) rad.</p>
-      </div>
-      <div class="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition">
-        <h3 class="font-bold text-gray-900 mb-3 text-center">2. Matter Waves</h3>
-        <p class="text-gray-700 text-sm text-center">Anomalous phase shifts when scalar-field gradient exceeds \(|\nabla\phi|^2 > 10^{16}\) (SI units).</p>
-      </div>
-      <div class="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition">
-        <h3 class="font-bold text-gray-900 mb-3 text-center">3. Gravitational Waves</h3>
-        <p class="text-gray-700 text-sm text-center">LIGO/Virgo/KAGRA/LISA show narrow-band resonant excess strain near \(\omega^*\).</p>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#abstract" class="hover:text-emerald-400">Abstract</a>
+        <a href="#framework" class="hover:text-emerald-400">Framework</a>
+        <a href="#type1" class="hover:text-emerald-400">Type I Derivation</a>
+        <a href="#gw" class="hover:text-emerald-400">GW Detection</a>
+        <a href="https://github.com/topherchris420/dynamic-location-theory" target="_blank" class="flex items-center gap-2 hover:text-emerald-400">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://github.com/topherchris420/james_library" target="_blank" class="flex items-center gap-2 hover:text-emerald-400">
+          <i class="fa-solid fa-microchip"></i> R.A.I.N. Lab
+        </a>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <hr class="max-w-4xl mx-auto my-8 border-gray-200">
+  <div class="max-w-5xl mx-auto px-6 py-12">
 
-  <!-- Citation -->
-  <section class="max-w-4xl mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold text-gray-900 mb-6">BibTeX</h2>
-    <div class="bibtex text-gray-800">
-@misc{woodyard2026dlt,
-  author = {Woodyard, Christopher},
-  title = {Dynamic Localization Across Space and Time},
-  year = {2026},
-  doi = {10.5281/zenodo.18263032},
-  url = {https://github.com/topherchris420/dynamic-location-theory}
-}
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="mt-16 bg-gray-50 border-t border-gray-200 py-10">
-    <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-      <p>© 2026 Christopher Woodyard</p>
-      <div class="flex gap-4 mt-4 md:mt-0">
-        <a href="https://vers3dynamics.com" class="hover:text-blue-600 transition">Vers3Dynamics</a>
-        <a href="https://github.com/topherchris420/james_library" class="hover:text-blue-600 transition">R.A.I.N. Lab Continuum Computer Project</a>
+    <!-- Title -->
+    <header class="text-center mb-16">
+      <div class="inline-flex items-center gap-3 bg-emerald-950 text-emerald-300 rounded-3xl px-6 py-2 text-sm mb-6">
+        <i class="fa-solid fa-flask"></i>
+        R.A.I.N. Lab • self improving
       </div>
-    </div>
-  </footer>
+      <h1 class="title-font text-6xl font-semibold leading-none tracking-tight mb-4">Dynamic Location Theory</h1>
+      <p class="text-3xl text-zinc-400">A Unified Frequency-Based Framework for Spatial Position, Temporal Re-Localization, and Informational Retrieval</p>
+      <p class="mt-8 text-zinc-400">Christopher Woodyard • Vers3Dynamics &amp; R.A.I.N. Lab • Washington, D.C., USA • March 2026</p>
+    </header>
 
+    <!-- Abstract -->
+    <section id="abstract" class="mb-20">
+      <h2 class="text-3xl font-semibold mb-8 border-b border-zinc-700 pb-4">Abstract</h2>
+      <div class="prose prose-invert max-w-none text-lg leading-relaxed">
+        <p>This paper is about spatial localization and temporal re-localization under a single resonance model in which <strong>location is a property of the object</strong>, selected by resonance between matter and a background scalar field. Rather than treating position and time as external labels on a spacetime manifold, we encode the spatiotemporal position of any physical system in the dominant resonance frequency \(\omega_{\rm loc}\) of its coupled matter-scalar-field state.</p>
+        <p>We define a frequency-parameterized localization operator \(\mathcal{L}\) acting on the extended Hilbert space \(\mathcal{H}_{\rm sys} \otimes \mathcal{H}_\phi\), derive the driven field-theoretic coupling, and recover standard quantum mechanics and classical trajectories in the weak-coupling limit. Macroscopic material re-localization (spatial or temporal) remains energetically prohibitive (\(E_{\rm req} > 10^{45}\) J) while informational re-localization respects Landauer’s bound and is physically feasible. The framework supplies concrete, falsifiable predictions for atomic-clock interferometry, matter-wave interferometry, and gravitational-wave detection.</p>
+      </div>
+    </section>
+
+    <!-- Unified Theoretical Framework -->
+    <section id="framework" class="mb-20">
+      <h2 class="section-header font-semibold mb-8">1. Unified Theoretical Framework</h2>
+      
+      <h3 class="text-2xl font-medium mb-4">1.1 Localization Operator</h3>
+      <div class="equation">
+        \[\mathcal{L}\,|\Psi\rangle = \omega_{\rm loc}\,|\Psi\rangle, \quad |\Psi\rangle = |\psi\rangle_{\rm matter} \otimes |\phi\rangle_{\rm scalar}\]
+      </div>
+      <p class="text-zinc-400">Location is a property of the object: the observable coordinates \((x,t)\) are eigenvalues of \(\mathcal{L}\).</p>
+
+      <h3 class="text-2xl font-medium mt-12 mb-4">1.2 Unified Hamiltonian</h3>
+      <div class="equation">
+        \[H_{\rm total} = H_{\rm matter} + H_{\rm scalar} + \gamma\hbar\bigl(\omega_w - \omega_{\rm loc}(\mathbf{x},t)\bigr)\]
+      </div>
+
+      <h3 class="text-2xl font-medium mt-12 mb-4">1.3 Three Modes of Re-Localization</h3>
+      <table class="w-full border-collapse border border-zinc-700 text-left">
+        <thead>
+          <tr class="bg-zinc-900">
+            <th class="p-4 border border-zinc-700">Mode</th>
+            <th class="p-4 border border-zinc-700">Domain</th>
+            <th class="p-4 border border-zinc-700">Physical Meaning</th>
+            <th class="p-4 border border-zinc-700">Energy Scale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-4 border border-zinc-700">Type I</td><td class="p-4 border border-zinc-700">Parallel / branch</td><td class="p-4 border border-zinc-700">Phase shift between resonant states</td><td class="p-4 border border-zinc-700">Low to moderate</td></tr>
+          <tr><td class="p-4 border border-zinc-700">Type II</td><td class="p-4 border border-zinc-700">Material</td><td class="p-4 border border-zinc-700">Displacement of mass-energy</td><td class="p-4 border border-zinc-700">Prohibitive (&gt;10<sup>45</sup> J)</td></tr>
+          <tr><td class="p-4 border border-zinc-700">Type III</td><td class="p-4 border border-zinc-700">Informational</td><td class="p-4 border border-zinc-700">Memory and data retrieval</td><td class="p-4 border border-zinc-700">Near Landauer’s limit</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Type I Derivation -->
+    <section id="type1" class="mb-20">
+      <h2 class="section-header font-semibold mb-8">2. Type I Re-Localization: Mathematical Derivation</h2>
+      <p class="text-lg text-zinc-300 mb-8">Type I re-localization is a coherent phase shift between resonant eigenstates with no net mass-energy displacement.</p>
+      <div class="equation">
+        \[\Delta\phi(t) = \gamma\int_0^t\bigl(\omega_1(t') - \omega_2(t')\bigr)\,dt'\]
+      </div>
+      <p class="text-zinc-400">This is the exact phase measured in atomic-clock interferometry and the additional signal in gravitational-wave detectors.</p>
+    </section>
+
+    <!-- Gravitational-Wave Application -->
+    <section id="gw" class="mb-20">
+      <h2 class="section-header font-semibold mb-8">3. Application to Gravitational-Wave Detection</h2>
+      <p class="text-lg text-zinc-300">The non-minimal coupling \(-\xi(\omega)\phi^2 R\) sources scalar excitations from GW curvature, producing a narrow-band resonant excess strain in LIGO/Virgo/KAGRA/LISA near the resonance frequency \(\omega^*\).</p>
+      <div class="equation">
+        \[\Delta\phi_{\rm DLT} = C\,\xi(\omega)\,h_+(t)\,\tau\]
+      </div>
+      <p class="text-zinc-400">This is a pure Type-I phase shift. No macroscopic test-mass displacement (Type II) occurs.</p>
+    </section>
+
+    <!-- Full Content Summary -->
+    <div class="prose prose-invert max-w-none text-zinc-300">
+      <h2 class="section-header font-semibold mb-8">Full Paper Content (Condensed for Web)</h2>
+      <p>The complete theory includes:</p>
+      <ul class="list-disc pl-6 space-y-3">
+        <li>Spatial and temporal localization as the same resonance problem</li>
+        <li>Weak-coupling corrections at the 10<sup>-26</sup> level</li>
+        <li>Energy gap of 24 orders of magnitude between material and informational re-localization</li>
+        <li>Three concrete falsifiable predictions (atomic clocks, matter waves, gravitational waves)</li>
+        <li>Recovery of Newtonian mechanics and standard quantum mechanics in the appropriate limits</li>
+      </ul>
+    </div>
+
+    <!-- Download & Links -->
+    <div class="mt-20 flex flex-wrap justify-center gap-4">
+      <a href="static/DLT_paper.pdf" target="_blank" 
+         class="bg-white text-zinc-950 hover:bg-emerald-400 px-8 py-4 rounded-2xl font-medium flex items-center gap-3 text-lg">
+        <i class="fa-solid fa-file-pdf"></i> Download Full PDF
+      </a>
+      <a href="https://github.com/topherchris420/dynamic-location-theory/archive/refs/heads/main.zip" 
+         class="border border-zinc-700 hover:border-emerald-400 px-8 py-4 rounded-2xl font-medium flex items-center gap-3 text-lg">
+        <i class="fa-solid fa-download"></i> LaTeX Source
+      </a>
+      <a href="https://github.com/topherchris420/james_library" target="_blank" 
+         class="border border-emerald-400 px-8 py-4 rounded-2xl font-medium flex items-center gap-3 text-lg">
+        <i class="fa-solid fa-microchip"></i> R.A.I.N. Lab (james_library)
+      </a>
+    </div>
+
+    <footer class="mt-24 text-center text-zinc-500 text-sm">
+      © 2026 Christopher Woodyard • Vers3Dynamics &amp; R.A.I.N. Lab • Full academic paper rendered as HTML for web viewing
+    </footer>
+  </div>
+
+  <script>
+    MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+  </script>
 </body>
 </html>
