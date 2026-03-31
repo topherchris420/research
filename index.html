@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dynamic Location Theory - A Frequency-Based Framework for Spatial Position, Temporal Re-Localization, and Informational Retrieval">
-  <title>Dynamic Location Theory | Christopher Woodyard</title>
+  <meta name="description" content="Dynamic Location Theory - Developed at R.A.I.N. Lab">
+  <title>Dynamic Location Theory | R.A.I.N. Lab</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -14,6 +14,7 @@
   </style>
 </head>
 <body class="bg-zinc-950 text-white">
+
   <!-- Navbar -->
   <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
     <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -21,6 +22,9 @@
         <span class="text-emerald-400">Vers3</span>Dynamics
       </a>
       <div class="flex items-center gap-8 text-sm">
+        <a href="https://github.com/topherchris420/james_library" target="_blank" class="flex items-center gap-2 hover:text-emerald-400 transition">
+          <i class="fa-solid fa-microchip"></i> R.A.I.N. Lab
+        </a>
         <a href="#abstract" class="hover:text-emerald-400 transition">Abstract</a>
         <a href="#predictions" class="hover:text-emerald-400 transition">Predictions</a>
         <a href="#type1" class="hover:text-emerald-400 transition">Type I Derivation</a>
@@ -31,14 +35,19 @@
 
   <!-- Hero -->
   <header class="max-w-screen-xl mx-auto px-6 pt-20 pb-16 text-center">
+    <div class="inline-flex items-center gap-3 bg-zinc-900 border border-emerald-900 rounded-3xl px-6 py-2 mb-8 text-sm">
+      <i class="fa-solid fa-flask text-emerald-400"></i>
+      Developed at <strong>R.A.I.N. Lab</strong> • Continuum Computer Project
+    </div>
+
     <h1 class="title-font text-5xl md:text-6xl font-semibold leading-tight mb-6">
       Dynamic Location Theory
     </h1>
     <p class="text-2xl text-zinc-400 mb-8">A Unified Frequency-Based Framework for<br>Spatial Position, Temporal Re-Localization, and Informational Retrieval</p>
-    
+
     <div class="flex items-center justify-center gap-4 text-sm mb-12">
-      <div class="bg-zinc-900 px-4 py-2 rounded-full flex items-center gap-2">
-        <span class="text-emerald-400">Christopher Woodyard</span>
+      <div class="bg-emerald-950 text-emerald-300 px-4 py-2 rounded-full flex items-center gap-2">
+        Christopher Woodyard
       </div>
       <div class="text-zinc-500">Vers3Dynamics • R.A.I.N. Lab • Washington, D.C.</div>
     </div>
@@ -49,15 +58,15 @@
         <i class="fa-solid fa-file-pdf text-xl"></i>
         <span>Download Full Paper (PDF)</span>
       </a>
+      <a href="https://github.com/topherchris420/james_library" target="_blank"
+         class="border border-emerald-400 hover:bg-emerald-400 hover:text-zinc-950 font-medium px-8 py-4 rounded-2xl flex items-center gap-3 transition">
+        <i class="fa-solid fa-microchip"></i>
+        <span>R.A.I.N. Lab • james_library</span>
+      </a>
       <a href="https://doi.org/10.5281/zenodo.18263032" target="_blank"
          class="border border-zinc-700 hover:border-zinc-400 font-medium px-8 py-4 rounded-2xl flex items-center gap-3 transition">
         <i class="fa-brands fa-zenodo"></i>
         <span>Cite on Zenodo</span>
-      </a>
-      <a href="https://github.com/topherchris420/dynamic-location-theory/archive/refs/heads/main.zip"
-         class="border border-zinc-700 hover:border-zinc-400 font-medium px-8 py-4 rounded-2xl flex items-center gap-3 transition">
-        <i class="fa-solid fa-download"></i>
-        <span>LaTeX Source</span>
       </a>
     </div>
   </header>
@@ -77,47 +86,58 @@
       \(\mathcal{H}_{\rm sys} \otimes \mathcal{H}_\phi\), derive the driven field-theoretic coupling, and recover standard 
       quantum mechanics and classical trajectories in the weak-coupling limit. Macroscopic material re-localization remains 
       energetically prohibitive (\(E_{\rm req} > 10^{45}\) J) while informational re-localization respects Landauer’s bound 
-      and is physically feasible.
+      and is physically feasible. The framework supplies concrete, falsifiable predictions for atomic-clock interferometry, 
+      matter-wave interferometry, and gravitational-wave detection.
     </p>
-    <p class="text-emerald-400 mt-8 text-sm font-medium">Keywords: Dynamic Location Theory, scalar fields, frequency-location operator, temporal resonance, emergent spacetime, gravitational-wave detection</p>
+    <p class="text-emerald-400 mt-8 text-sm font-medium">
+      Keywords: Dynamic Location Theory, scalar fields, frequency-location operator, temporal resonance, emergent spacetime, gravitational-wave detection
+    </p>
   </section>
 
-  <!-- Key Predictions -->
+  <!-- Predictions -->
   <section id="predictions" class="bg-zinc-900 py-16">
     <div class="max-w-screen-xl mx-auto px-6">
       <h2 class="text-3xl font-semibold mb-10 text-center">Falsifiable Predictions</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-zinc-950 p-8 rounded-3xl">
           <h3 class="font-semibold text-emerald-400 mb-3">Prediction 1 — Atomic Clocks</h3>
-          <p class="text-zinc-400">Differential atomic-clock interferometry measures a relative phase shift \(\Delta\phi \approx \gamma \int (\omega_1 - \omega_2) dt\) of order \(10^{-19}\) rad.</p>
+          <p class="text-zinc-400">Differential atomic-clock interferometry measures a relative phase shift of order \(10^{-19}\) rad.</p>
         </div>
         <div class="bg-zinc-950 p-8 rounded-3xl">
           <h3 class="font-semibold text-emerald-400 mb-3">Prediction 2 — Matter Waves</h3>
-          <p class="text-zinc-400">Anomalous phase shifts appear when scalar-field gradient exceeds \(|\nabla\phi|^2 > 10^{16}\) (SI units).</p>
+          <p class="text-zinc-400">Anomalous phase shifts when scalar-field gradient exceeds \(|\nabla\phi|^2 > 10^{16}\) (SI units).</p>
         </div>
         <div class="bg-zinc-950 p-8 rounded-3xl">
           <h3 class="font-semibold text-emerald-400 mb-3">Prediction 3 — Gravitational Waves</h3>
-          <p class="text-zinc-400">LIGO/Virgo/KAGRA/LISA show narrow-band resonant excess strain near \(\omega^*\) with amplitude \(\propto \alpha \xi_0 h\).</p>
+          <p class="text-zinc-400">LIGO/Virgo/KAGRA/LISA show narrow-band resonant excess strain near \(\omega^*\).</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Type I Derivation Teaser -->
+  <!-- Type I Derivation -->
   <section id="type1" class="max-w-screen-xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-semibold mb-8">Type I Re-Localization (Mathematical Core)</h2>
     <p class="text-zinc-400 max-w-3xl">
-      The entire framework rests on a clean, exact derivation: a coherent phase shift between resonant eigenstates with <strong>no mass-energy displacement</strong>.
+      The entire framework rests on a clean derivation: a coherent phase shift between resonant eigenstates with 
+      <strong>no mass-energy displacement</strong>.
     </p>
     <div class="mt-10 bg-zinc-900 p-8 rounded-3xl font-mono text-sm overflow-auto">
       \[\Delta\phi(t) = \gamma\int_0^t \bigl(\omega_1(t') - \omega_2(t')\bigr)\,dt'\]
     </div>
-    <p class="text-zinc-400 mt-6">This single equation explains atomic-clock interferometry, matter-wave anomalies, and the new gravitational-wave signature.</p>
+    <p class="text-zinc-400 mt-6">This single equation unifies atomic-clock interferometry, matter-wave anomalies, and the gravitational-wave signature.</p>
   </section>
 
-  <!-- Footer / Citation -->
+  <!-- Footer -->
   <footer class="bg-black border-t border-zinc-800 py-12">
     <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <p class="text-emerald-400 mb-2">Part of the R.A.I.N. Lab Continuum Computer Initiative</p>
+      <a href="https://github.com/topherchris420/james_library" target="_blank" 
+         class="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition mb-8">
+        <i class="fa-solid fa-microchip"></i>
+        james_library • R.A.I.N. Lab
+      </a>
+
       <p class="text-zinc-400 mb-6">How to cite this work</p>
       <div class="max-w-2xl mx-auto bg-zinc-900 p-8 rounded-3xl text-left font-mono text-sm mb-10">
         @misc{woodyard2026dlt,<br>
@@ -129,12 +149,12 @@
         }
       </div>
 
-      <div class="flex flex-wrap justify-center gap-6 text-sm">
+      <div class="flex flex-wrap justify-center gap-8 text-sm">
         <a href="static/DLT_paper.pdf" class="flex items-center gap-2 hover:text-emerald-400">
           <i class="fa-solid fa-file-pdf"></i> PDF
         </a>
         <a href="https://github.com/topherchris420/dynamic-location-theory" target="_blank" class="flex items-center gap-2 hover:text-emerald-400">
-          <i class="fa-brands fa-github"></i> GitHub Repo
+          <i class="fa-brands fa-github"></i> GitHub
         </a>
         <a href="https://vers3dynamics.com" class="flex items-center gap-2 hover:text-emerald-400">
           <i class="fa-solid fa-globe"></i> Vers3Dynamics.com
@@ -148,8 +168,7 @@
   </footer>
 
   <script>
-    // Optional: simple Tailwind script (already loaded via CDN)
-    console.log('%cDynamic Location Theory site loaded', 'color:#10b981; font-family:monospace');
+    console.log('%cDynamic Location Theory site loaded — connected to R.A.I.N. Lab', 'color:#10b981; font-family:monospace');
   </script>
 </body>
 </html>
