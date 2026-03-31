@@ -6,14 +6,14 @@
 Vers3Dynamics • R.A.I.N. Lab  
 Washington, D.C., USA
 
-[![PDF](https://img.shields.io/badge/PDF-Download%20Paper-blue?style=flat-square&logo=adobeacrobatreader)](static/DLT_paper.pdf)
-[![arXiv-style](https://img.shields.io/badge/arXiv-Style%20Preprint-orange?style=flat-square)](https://github.com/topherchris420/research/blob/main/DLT_paper.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Download%20Paper-blue?style=flat-square&logo=adobeacrobatreader)](research/137.pdf)
+[![arXiv-style](https://img.shields.io/badge/arXiv-Style%20Preprint-orange?style=flat-square)](https://github.com/topherchris420/research/137.pdf)
 
 ---
 
 ## Abstract
 
-This paper unifies spatial localization and temporal re-localization under a single resonance model in which **location is a property of the object**, selected by resonance between matter and a background scalar field. Rather than treating position and time as external labels on a spacetime manifold, we encode the spatiotemporal position of any physical system in the dominant resonance frequency \(\omega_{\rm loc}\) of its coupled matter-scalar-field state.
+This paper is of spatial localization and temporal re-localization under a single resonance model in which **location is a property of the object**, selected by resonance between matter and a background scalar field. Rather than treating position and time as external labels on a spacetime manifold, we encode the spatiotemporal position of any physical system in the dominant resonance frequency \(\omega_{\rm loc}\) of its coupled matter-scalar-field state.
 
 We define a frequency-parameterized localization operator \(\mathcal{L}\) acting on the extended Hilbert space \(\mathcal{H}_{\rm sys} \otimes \mathcal{H}_\phi\), derive the driven field-theoretic coupling, and recover standard quantum mechanics and classical trajectories in the weak-coupling limit. Macroscopic material re-localization remains energetically prohibitive (\(E_{\rm req} > 10^{45}\) J) while informational re-localization respects Landauer’s bound and is physically feasible.
 
@@ -29,9 +29,9 @@ The framework supplies concrete, falsifiable predictions for atomic-clock interf
 
 ## Quick Links
 
-- **[Full Paper PDF](static/DLT_paper.pdf)** (latest version)
-- **[LaTeX Source](https://github.com/topherchris420/rsearch/archive/refs/heads/main.zip)** (`.tex` + figures)
-- **[Live Paper Page](https://topherchris420.github.io/rsearch/)** (GitHub Pages)
+- **[Full Paper PDF](research/137.pdf)** (latest version)
+- **[LaTeX Source](https://github.com/topherchris420/research/archive/refs/heads/main.zip)** (`.tex` + figures)
+- **[Live Paper Page](https://topherchris420.github.io/rsearch/137)** (GitHub Pages)
 - **[Vers3Dynamics Research Hub](https://vers3dynamics.com)**
 
 ## Citation
