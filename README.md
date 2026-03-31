@@ -29,10 +29,7 @@ The framework supplies concrete, falsifiable predictions for atomic-clock interf
 
 ## Quick Links
 
-- **[Full Paper PDF](research/137.pdf)** (latest version)
-- **[LaTeX Source](https://github.com/topherchris420/research/archive/refs/heads/main.zip)** (`.tex` + figures)
-- **[Live Paper Page](https://topherchris420.github.io/rsearch/137)** (GitHub Pages)
-- **[Vers3Dynamics Research Hub](https://vers3dynamics.com)**
+- **[Vers3Dynamics Research Hub](https://github.com/topherchris420/james_library)**
 
 ## Citation
 
