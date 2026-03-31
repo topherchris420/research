@@ -7,7 +7,9 @@
   <title>Dynamic Location Theory — Full Paper</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+    MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+  </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
@@ -15,7 +17,7 @@
     .title-font { font-family: 'Space Grotesk', sans-serif; }
     .math { font-size: 1.1rem; }
     .section-header { font-size: 1.75rem; }
-    .equation { background: #f8fafc; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; margin: 2rem 0; overflow-x: auto; }
+    .equation { background: #18181b; padding: 1.5rem; border-radius: 12px; border: 1px solid #27272a; margin: 2rem 0; overflow-x: auto; }
   </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
@@ -23,7 +25,7 @@
   <!-- Navbar -->
   <nav class="sticky top-0 bg-zinc-950 border-b border-zinc-800 z-50">
     <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="https://vers3dynamics.com" class="text-2xl font-semibold flex items-center gap-2">
+      <a href="https://vers3dynamics.com" class="text-2xl font-semibold flex items-center">
         <span class="text-emerald-400">Vers3</span>Dynamics
       </a>
       <div class="flex items-center gap-6 text-sm">
@@ -155,8 +157,5 @@
     </footer>
   </div>
 
-  <script>
-    MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
-  </script>
 </body>
 </html>
