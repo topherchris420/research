@@ -1,351 +1,155 @@
-\documentclass[conference,letterpaper,10pt]{IEEEtran}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{siunitx}
-\usepackage{hyperref}
-\usepackage{array}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dynamic Location Theory - A Frequency-Based Framework for Spatial Position, Temporal Re-Localization, and Informational Retrieval">
+  <title>Dynamic Location Theory | Christopher Woodyard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .title-font { font-family: 'Space Grotesk', sans-serif; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white">
+  <!-- Navbar -->
+  <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
+    <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="https://vers3dynamics.com" class="flex items-center gap-2 text-xl font-semibold">
+        <span class="text-emerald-400">Vers3</span>Dynamics
+      </a>
+      <div class="flex items-center gap-8 text-sm">
+        <a href="#abstract" class="hover:text-emerald-400 transition">Abstract</a>
+        <a href="#predictions" class="hover:text-emerald-400 transition">Predictions</a>
+        <a href="#type1" class="hover:text-emerald-400 transition">Type I Derivation</a>
+        <a href="https://github.com/topherchris420/dynamic-location-theory" target="_blank" class="hover:text-emerald-400 transition">GitHub</a>
+      </div>
+    </div>
+  </nav>
 
-\title{Dynamic Localization Across Space and Time\\
-A Frequency-Based Framework for Spatial Position, Temporal Re-Localization, and Informational Retrieval}
-\author{
-  Christopher Woodyard\\
-  Vers3Dynamics, R.A.I.N. Lab\\
-  Washington, D.C., USA
-}
+  <!-- Hero -->
+  <header class="max-w-screen-xl mx-auto px-6 pt-20 pb-16 text-center">
+    <h1 class="title-font text-5xl md:text-6xl font-semibold leading-tight mb-6">
+      Dynamic Location Theory
+    </h1>
+    <p class="text-2xl text-zinc-400 mb-8">A Unified Frequency-Based Framework for<br>Spatial Position, Temporal Re-Localization, and Informational Retrieval</p>
+    
+    <div class="flex items-center justify-center gap-4 text-sm mb-12">
+      <div class="bg-zinc-900 px-4 py-2 rounded-full flex items-center gap-2">
+        <span class="text-emerald-400">Christopher Woodyard</span>
+      </div>
+      <div class="text-zinc-500">Vers3Dynamics • R.A.I.N. Lab • Washington, D.C.</div>
+    </div>
 
-\begin{document}
-\maketitle
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="static/DLT_paper.pdf" target="_blank"
+         class="bg-white text-zinc-950 hover:bg-emerald-400 hover:text-zinc-950 font-medium px-8 py-4 rounded-2xl flex items-center gap-3 transition">
+        <i class="fa-solid fa-file-pdf text-xl"></i>
+        <span>Download Full Paper (PDF)</span>
+      </a>
+      <a href="https://doi.org/10.5281/zenodo.18263032" target="_blank"
+         class="border border-zinc-700 hover:border-zinc-400 font-medium px-8 py-4 rounded-2xl flex items-center gap-3 transition">
+        <i class="fa-brands fa-zenodo"></i>
+        <span>Cite on Zenodo</span>
+      </a>
+      <a href="https://github.com/topherchris420/dynamic-location-theory/archive/refs/heads/main.zip"
+         class="border border-zinc-700 hover:border-zinc-400 font-medium px-8 py-4 rounded-2xl flex items-center gap-3 transition">
+        <i class="fa-solid fa-download"></i>
+        <span>LaTeX Source</span>
+      </a>
+    </div>
+  </header>
 
-\begin{abstract}
-This paper unifies spatial localization and temporal re-localization under a single resonance model in which
-\textbf{location is a property of the object}, selected by resonance between matter and a background scalar field.
-Rather than treating position and time as external labels on a spacetime manifold, we encode the spatiotemporal
-position of any physical system in the dominant resonance frequency \(\omega_{\rm loc}\) of its coupled
-matter-scalar-field state. We define a frequency-parameterized localization operator \(\mathcal{L}\) acting on the
-extended Hilbert space \(\mathcal{H}_{\rm sys} \otimes \mathcal{H}_\phi\), derive the driven field-theoretic coupling,
-and recover standard quantum mechanics and classical trajectories in the weak-coupling limit. Macroscopic material
-re-localization (spatial or temporal) remains energetically prohibitive (\(E_{\rm req} > 10^{45}\) J) while
-informational re-localization respects Landauer's bound and is physically feasible. The framework supplies concrete,
-falsifiable predictions for atomic-clock interferometry, matter-wave interferometry, and gravitational-wave detection.
-\end{abstract}
+  <!-- Abstract -->
+  <section id="abstract" class="max-w-screen-xl mx-auto px-6 py-16 border-t border-zinc-800">
+    <h2 class="text-3xl font-semibold mb-8">Abstract</h2>
+    <p class="text-lg leading-relaxed text-zinc-300 max-w-3xl">
+      This paper unifies spatial localization and temporal re-localization under a single resonance model in which 
+      <strong>location is a property of the object</strong>, selected by resonance between matter and a background scalar field. 
+      Rather than treating position and time as external labels on a spacetime manifold, we encode the spatiotemporal 
+      position of any physical system in the dominant resonance frequency \(\omega_{\rm loc}\) of its coupled 
+      matter-scalar-field state.
+    </p>
+    <p class="text-lg leading-relaxed text-zinc-300 mt-6 max-w-3xl">
+      We define a frequency-parameterized localization operator \(\mathcal{L}\) acting on the extended Hilbert space 
+      \(\mathcal{H}_{\rm sys} \otimes \mathcal{H}_\phi\), derive the driven field-theoretic coupling, and recover standard 
+      quantum mechanics and classical trajectories in the weak-coupling limit. Macroscopic material re-localization remains 
+      energetically prohibitive (\(E_{\rm req} > 10^{45}\) J) while informational re-localization respects Landauer’s bound 
+      and is physically feasible.
+    </p>
+    <p class="text-emerald-400 mt-8 text-sm font-medium">Keywords: Dynamic Location Theory, scalar fields, frequency-location operator, temporal resonance, emergent spacetime, gravitational-wave detection</p>
+  </section>
 
-\begin{IEEEkeywords}
-Dynamic Location Theory, scalar fields, frequency-location operator, temporal resonance, emergent spacetime, quantum
-supercomputing, Landauer's principle, falsifiable quantum field theory, gravitational-wave detection
-\end{IEEEkeywords}
+  <!-- Key Predictions -->
+  <section id="predictions" class="bg-zinc-900 py-16">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold mb-10 text-center">Falsifiable Predictions</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-zinc-950 p-8 rounded-3xl">
+          <h3 class="font-semibold text-emerald-400 mb-3">Prediction 1 — Atomic Clocks</h3>
+          <p class="text-zinc-400">Differential atomic-clock interferometry measures a relative phase shift \(\Delta\phi \approx \gamma \int (\omega_1 - \omega_2) dt\) of order \(10^{-19}\) rad.</p>
+        </div>
+        <div class="bg-zinc-950 p-8 rounded-3xl">
+          <h3 class="font-semibold text-emerald-400 mb-3">Prediction 2 — Matter Waves</h3>
+          <p class="text-zinc-400">Anomalous phase shifts appear when scalar-field gradient exceeds \(|\nabla\phi|^2 > 10^{16}\) (SI units).</p>
+        </div>
+        <div class="bg-zinc-950 p-8 rounded-3xl">
+          <h3 class="font-semibold text-emerald-400 mb-3">Prediction 3 — Gravitational Waves</h3>
+          <p class="text-zinc-400">LIGO/Virgo/KAGRA/LISA show narrow-band resonant excess strain near \(\omega^*\) with amplitude \(\propto \alpha \xi_0 h\).</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-\section{Introduction}
-In standard physics, position and time serve as external labels on a spacetime manifold. While this framework has been
- extraordinarily successful, it does not provide a \emph{dynamical explanation} for why an object occupies one
-position rather than another, nor why temporal evolution proceeds in one direction versus another. Dynamic Location
-Theory (DLT) proposes that localization itself is an emergent \emph{property of the object}, selected by resonance
-between matter and a background scalar field. Spatial position and temporal coordinate become two manifestations of
-the same frequency-tuning problem.
-This distinction matters because it separates two categories of re-localization that standard physics conflates:
-material transport (moving an object through space or time) and informational access (retrieving a state that was
-localized at a different spatiotemporal coordinate). DLT recovers all standard predictions in appropriate limits,
-renders material transport energetically forbidden, and remains falsifiable through concrete experimental predictions.
+  <!-- Type I Derivation Teaser -->
+  <section id="type1" class="max-w-screen-xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-semibold mb-8">Type I Re-Localization (Mathematical Core)</h2>
+    <p class="text-zinc-400 max-w-3xl">
+      The entire framework rests on a clean, exact derivation: a coherent phase shift between resonant eigenstates with <strong>no mass-energy displacement</strong>.
+    </p>
+    <div class="mt-10 bg-zinc-900 p-8 rounded-3xl font-mono text-sm overflow-auto">
+      \[\Delta\phi(t) = \gamma\int_0^t \bigl(\omega_1(t') - \omega_2(t')\bigr)\,dt'\]
+    </div>
+    <p class="text-zinc-400 mt-6">This single equation explains atomic-clock interferometry, matter-wave anomalies, and the new gravitational-wave signature.</p>
+  </section>
 
-\section{Unified Theoretical Framework}
-\subsection{Localization Operator}
-We define the unified resonance operator \(\mathcal{L}\) acting on the tensor-product Hilbert space \(\mathcal{H}_{\rm
-sys} \otimes \mathcal{H}_\phi\):
-\begin{equation}
-\mathcal{L}\,|\Psi\rangle = \omega_{\rm loc}\,|\Psi\rangle, \qquad
-|\Psi\rangle = |\psi\rangle_{\rm matter} \otimes |\phi\rangle_{\rm scalar},
-\label{eq:loc-op}
-\end{equation}
-where \(\omega_{\rm loc}\) is the dominant resonance signature of the coupled matter-scalar system. The scalar field
-\(|\phi\rangle_{\rm scalar}\) describes the background field state, whose vacuum expectation value
-\(\langle\phi\rangle_0\) parameterizes the classical spacetime background.
-\textbf{Central Thesis (Formal).} \emph{Location is a property of the object:} the observable spatiotemporal
-coordinates \((x,t)\) of a physical system are eigenvalues of the localization operator \(\mathcal{L}\) acting on its
-coupled state, not pre-existing labels on a manifold.
+  <!-- Footer / Citation -->
+  <footer class="bg-black border-t border-zinc-800 py-12">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <p class="text-zinc-400 mb-6">How to cite this work</p>
+      <div class="max-w-2xl mx-auto bg-zinc-900 p-8 rounded-3xl text-left font-mono text-sm mb-10">
+        @misc{woodyard2026dlt,<br>
+          author = {Woodyard, Christopher},<br>
+          title = {Dynamic Localization Across Space and Time},<br>
+          year = {2026},<br>
+          doi = {10.5281/zenodo.18263032},<br>
+          url = {https://github.com/topherchris420/dynamic-location-theory}<br>
+        }
+      </div>
 
-\subsection{Unified Hamiltonian}
-The total non-relativistic Hamiltonian governing the coupled system is
-\begin{equation}
-H_{\rm total} = H_{\rm matter} + H_{\rm scalar} + \gamma\hbar\bigl(\omega_w - \omega_{\rm loc}(\mathbf{x},t)\bigr),
-\label{eq:hamiltonian}
-\end{equation}
-where \(\gamma\) is a dimensionless coupling constant and \(\omega_w\) is the driving frequency of an external field.
-Forward (adiabatic) evolution corresponds to the tracking condition \(\omega_w \approx \omega_{\rm loc}\);
-re-localization to a target resonance requires non-adiabatic driving.
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <a href="static/DLT_paper.pdf" class="flex items-center gap-2 hover:text-emerald-400">
+          <i class="fa-solid fa-file-pdf"></i> PDF
+        </a>
+        <a href="https://github.com/topherchris420/dynamic-location-theory" target="_blank" class="flex items-center gap-2 hover:text-emerald-400">
+          <i class="fa-brands fa-github"></i> GitHub Repo
+        </a>
+        <a href="https://vers3dynamics.com" class="flex items-center gap-2 hover:text-emerald-400">
+          <i class="fa-solid fa-globe"></i> Vers3Dynamics.com
+        </a>
+      </div>
 
-\subsection{Three Modes of Re-Localization}
-Table~\ref{tab:modes} classifies the distinct physical meanings and energy costs of re-localization under DLT.
-\begin{table*}[t]
-\centering
-\small
-\caption{Classification of re-localization modes by domain, physical meaning, and energy scale.}
-\label{tab:modes}
-\begin{tabular}{@{}p{1.5cm} p{2.0cm} p{6.5cm} p{4.0cm}@{}}
-\toprule
-\textbf{Mode} & \textbf{Domain} & \textbf{Physical Meaning} & \textbf{Energy Scale} \\
-\midrule
-Type I & Parallel / branch & Phase shift between resonant states & Low to moderate \\
-Type II & Material & Displacement of mass-energy & Prohibitive (\(>10^{45}\) J) \\
-Type III & Informational & Memory and data retrieval & Near Landauer's limit \\
-\bottomrule
-\end{tabular}
-\end{table*}
-The energetic separation between Type II and Type III is central to the framework: moving macroscopic matter (Type II)
- is distinguished not categorically but quantitatively from retrieving stored information (Type III).
+      <p class="text-zinc-500 text-xs mt-12">
+        © 2026 Christopher Woodyard • Independent research at Vers3Dynamics &amp; R.A.I.N. Lab
+      </p>
+    </div>
+  </footer>
 
-\section{Spatial Localization as a Dynamical Variable}
-The frequency-location operator in position representation is
-\begin{equation}
-\mathcal{L} = \int d^3x\;\omega(\mathbf{x})\,|\phi(\mathbf{x})\rangle\langle\phi(\mathbf{x})| \otimes
-\hat{P}_{\mathbf{x}},
-\label{eq:spatial-op}
-\end{equation}
-where \(\hat{P}_{\mathbf{x}} = |\mathbf{x}\rangle\langle\mathbf{x}|\) projects onto position eigenstates. In the uniform
- vacuum ground state \(|\phi_0\rangle\), the scalar field factorizes and we recover the standard position operator as a
-marginal case.
-Weak-coupling corrections to standard position probabilities are
-\begin{equation}
-\epsilon(\mathbf{x},t) = \xi^2\,\frac{|\phi(\mathbf{x},t)-\phi_0|^2}{\phi_0^2}\,
-f\!\left(\frac{\omega_{\rm loc}(\mathbf{x})}{\omega_w}\right) \sim 10^{-26},
-\label{eq:epsilon}
-\end{equation}
-for laboratory values \(\xi \sim 10^{-10}\), yielding corrections at the \(10^{-26}\) level---well beyond current
-experimental resolution but theoretically well-defined.
-
-\section{Temporal Re-Localization as the Same Mechanism}
-Temporal eigenstates are selected by the \emph{same} resonance condition. Forward time evolution corresponds to the
-adiabatic tracking \(\omega_w \approx \omega_{\rm loc}(t)\). Re-localization to \(t' \neq t\) is non-adiabatic resonance
-tuning to a different temporal eigenfrequency.
-Concretely, a state \(|\psi(t)\rangle\) localized at time \(t\) can be driven to a state \(|\psi(t')\rangle\) by applying a
-driving field at frequency \(\omega_w = \omega_{\rm loc}(t')\) for a finite duration \(\Delta t\). The energy cost scales
-with the overlap \(\langle\psi(t')|\psi(t)\rangle\) and the driving amplitude, not with the temporal separation \(|t'-t|\)
- itself---this is why informational re-localization (Type III) is energetically distinct from material temporal
-transport (Type II).
-The distinction between ``time travel'' and memory access is therefore purely energetic, not categorical: both are
-resonance tuning problems differing only in the complexity of the target state.
-
-\section{Field-Theoretic Description}
-The effective action incorporating frequency-dependent non-minimal coupling between the scalar field and gravity is
-\begin{equation}
-S = \int d^4x\sqrt{-g}\left[\frac{R}{16\pi G} - \frac12(\partial\phi)^2 - V(\phi) - \xi(\omega)\phi^2 R +
-\mathcal{L}_{\rm SM}\right],
-\label{eq:action}
-\end{equation}
-where \(R\) is the Ricci scalar, \(G\) is Newton's gravitational constant, and \(\mathcal{L}_{\rm SM}\) is the Standard
-Model Lagrangian. The frequency-dependent coupling \(\xi(\omega)\) encodes the resonance response:
-\begin{equation}
-\xi(\omega) = \xi_0\!\left(1 + \alpha\, e^{-(\omega-\omega^*)^2/\Delta\omega^2}\right), \qquad \xi_0 \sim 10^{-10}.
-\label{eq:xi}
-\end{equation}
-Here \(\omega^*\) is the resonance center, \(\Delta\omega\) is the resonance width, and \(\alpha\) is a dimensionless
-amplitude. The Gaussian form arises naturally from the Breit-Wigner resonance profile of the coupled matter-scalar
-system.
-The driven Klein-Gordon equation in flat spacetime (\(g^{\mu\nu} = \eta^{\mu\nu}\)) follows from
-varying~\eqref{eq:action}:
-\begin{equation}
-\ddot{\phi} - \nabla^2\phi + m^2\phi \approx J_0\,e^{-i\omega_w t}\,\delta^3(\mathbf{x}-\mathbf{x}_0).
-\label{eq:klein-gordon}
-\end{equation}
-The scalar field exerts an effective force on matter via the gradient of the coupling energy density:
-\begin{equation}
-\mathbf{F}_\phi = -\nabla\!\bigl(\xi(\omega)\,\phi^2\,\rho_{\rm matter}\bigr) = -\nabla U_\phi(\mathbf{x},t).
-\label{eq:force}
-\end{equation}
-This force derives from the potential \(U_\phi = \xi(\omega)\phi^2\rho_{\rm matter}\), confirming energy conservation in
- the coupled system.
-
-\section{Classical and Quantum Limits}
-\subsection{Classical Limit (Ehrenfest Theorem)}
-Applying the Ehrenfest theorem to the localization operator yields the classical trajectory in the limit \(\hbar \to
-0\):
-\begin{equation}
-\lim_{\hbar\to0}\langle\mathcal{L}(t)\rangle = \omega\bigl(\mathbf{x}_{\rm cl}(t)\bigr).
-\label{eq:classical}
-\end{equation}
-The classical equation of motion follows from the Hellmann-Feynman force:
-\begin{equation}
-m\ddot{\mathbf{x}}_{\rm cl} = \mathbf{F}_{\rm classical} + \mathbf{F}_\phi.
-\label{eq:eom}
-\end{equation}
-\subsection{Weak-Coupling Limit (Newtonian Mechanics)}
-In the limit of vanishing scalar-matter coupling (\(\xi \to 0\)), the scalar force vanishes and the trajectory reduces
-to the Newtonian solution:
-\begin{equation}
-\lim_{\xi\to0}\mathbf{x}_{\rm cl}(t) = \mathbf{x}_{\rm Newton}(t).
-\label{eq:newton}
-\end{equation}
-Thus DLT contains Newtonian mechanics as a limiting case, as required for any viable physical theory.
-
-\section{Energy Constraints}
-Material displacement (Type II re-localization, spatial or temporal) obeys the scaling
-\begin{equation}
-E_{\rm req} \approx mc^2\,\xi^2\!\left(\frac{\Delta}{\lambda_0}\right)^{\!2},
-\label{eq:energy}
-\end{equation}
-where \(\Delta\) is the spatial separation or normalized temporal separation \(\Delta t/\tau_P\), \(\lambda_0 = \hbar/(mc)\)
- is the Compton wavelength, and \(\tau_P = \sqrt{\hbar G/c^5}\) is the Planck time. For a macroscopic object (\(m \sim
-1\;\text{kg}\), \(\Delta \sim 1\;\text{m}\)), this yields \(E_{\rm req} \gg 10^{45}\) J, rendering material re-localization
- energetically prohibitive.
-Informational re-localization (Type III), by contrast, satisfies Landauer's principle:
-\begin{equation}
-E_{\rm info} \ge k_B T\ln 2 \approx 10^{-21}\;\text{J/bit}\quad (T = 300\;\text{K}).
-\label{eq:landauer}
-\end{equation}
-The 24-order-of-magnitude gap between~\eqref{eq:energy} and~\eqref{eq:landauer} for macroscopic systems is the
-framework's central empirical prediction.
-
-\section{Experimental Considerations and Falsifiability}
-\subsection{Predictions}
-\textbf{Prediction 1 (Atomic-Clock Interferometry).} Differential interferometry between two spatially separated
-atomic clocks measures a relative phase shift
-\begin{equation}
-\Delta\phi \approx \gamma\int_{t_0}^{t_1}\!\bigl(\omega_1(t) - \omega_2(t)\bigr)\,dt,
-\label{eq:phase}
-\end{equation}
-arising from the coupling \(\gamma\hbar(\omega_w - \omega_{\rm loc})\). With next-generation optical clocks achieving
-fractional uncertainty \(\Delta\nu/\nu \sim 10^{-19}\), this yields phase shifts of order \(10^{-19}\) rad in a
-\SI{1}{\second} integration time.
-\textbf{Prediction 2 (Matter-Wave Interferometry).} A matter-wave interferometer exhibits anomalous phase shifts when
-the scalar-field gradient exceeds
-\begin{equation}
-|\nabla\phi|^2 > 10^{16}\;\text{(SI units)}.
-\label{eq:gradient-threshold}
-\end{equation}
-as derived from equating the scalar force \(F_\phi\) with the interferometer's intrinsic phase sensitivity.
-\textbf{Prediction 3 (Gravitational-Wave Interferometry).} Gravitational-wave detectors (LIGO, Virgo, KAGRA, LISA)
-operating near the resonance center \(\omega^*\) will exhibit a narrow-band resonant excess strain or
-frequency-dependent deviation from the General Relativistic antenna pattern, with amplitude scaling as \(\alpha\xi_0
-h\), where \(h\) is the gravitational-wave strain amplitude.
-
-\subsection{Falsification Criteria}
-The framework is falsified if any of the following are observed:
-\begin{enumerate}
-\item Atomic-clock interferometry achieves \(10^{-20}\) rad precision with no phase noise correlating with \(\omega_{\rm
-loc}\) differences between the clocks.
-\item Matter-wave interferometers detect no anomalous phase shift at gradient sensitivities down to \(10^{15}\) SI
-units.
-\item Gravitational-wave detectors show no frequency-dependent excess strain or antenna-pattern deviation at the level
- \(\gamma\xi_0 \sim 10^{-10}\) near the predicted resonance frequency.
-\item High-fidelity quantum simulations of the \(\mathcal{H}_{\rm sys}\otimes\mathcal{H}_\phi\) coupled system exhibit
-instabilities that violate energy or momentum conservation at the \(10^{-6}\) level.
-\end{enumerate}
-
-\section{Type I Re-Localization: Mathematical Derivation}
-Type I re-localization corresponds to a coherent phase shift between two (or more) resonant eigenstates of the
-localization operator \(\mathcal{L}\) without any net displacement of mass-energy. Start from the localization operator
-eigenvalue equation
-\begin{equation}
-\mathcal{L}\,|\Psi_i\rangle = \omega_i\,|\Psi_i\rangle, \qquad i=1,2,
-\label{eq:type1-eigen}
-\end{equation}
-where \(|\Psi_i\rangle = |\psi_i\rangle_{\rm matter} \otimes |\phi_i\rangle_{\rm scalar}\).
-The interaction piece of the total Hamiltonian is
-\begin{equation}
-H_{\rm int} = \gamma\hbar\,(\omega_w\,\mathbb{I} - \mathcal{L}).
-\label{eq:type1-hint}
-\end{equation}
-Projecting onto the two-dimensional subspace spanned by \(\{|\Psi_1\rangle,|\Psi_2\rangle\}\), the effective Hamiltonian
-matrix is
-\begin{equation}
-H_{\rm eff} = \gamma\hbar\begin{pmatrix}
-\omega_w - \omega_1 & 0 \\
-0 & \omega_w - \omega_2
-\end{pmatrix}.
-\label{eq:type1-heff}
-\end{equation}
-The unitary time-evolution operator is
-\begin{equation}
-U(t) = \exp\!\Bigl(-i\gamma\int_0^t(\omega_w(t')-\mathcal{L})\,dt'\Bigr).
-\label{eq:type1-evo}
-\end{equation}
-Acting on a coherent superposition \(|\Psi(0)\rangle = \alpha|\Psi_1\rangle + \beta|\Psi_2\rangle\) yields
-\begin{equation}
-|\Psi(t)\rangle = \alpha\,e^{-i\gamma\int_0^t(\omega_w(t')-\omega_1)\,dt'}|\Psi_1\rangle
-+ \beta\,e^{-i\gamma\int_0^t(\omega_w(t')-\omega_2)\,dt'}|\Psi_2\rangle.
-\label{eq:type1-superpos}
-\end{equation}
-The relative phase between the two branches is
-\begin{equation}
-\Delta\phi(t) = \gamma\int_0^t\bigl(\omega_1(t') - \omega_2(t')\bigr)\,dt'.
-\label{eq:type1-deltaphi}
-\end{equation}
-This is precisely the phase shift measured in differential atomic-clock interferometry (Prediction 1). The energy cost
- of Type I re-localization is
-\begin{equation}
-E_{\rm I} \approx \gamma\hbar\,\Delta\omega \ll mc^2\xi^2,
-\label{eq:type1-energy}
-\end{equation}
-many orders of magnitude below the Type II threshold and comparable to or below Landauer's limit.
-
-\section{Application to Gravitational-Wave Detection}
-Gravitational-wave detectors (LIGO, Virgo, KAGRA, LISA) are ultra-sensitive Michelson interferometers that measure
-differential phase shifts from spacetime strain \(h_{\mu\nu}\). Under DLT, the non-minimal coupling \(-\xi(\omega)\phi^2
-R\) sources scalar excitations \(\delta\phi\) from propagating GW curvature. The linearized driven Klein-Gordon equation
-in curved spacetime yields a resonant scalar response when the GW frequency lies near \(\omega^*\).
-The induced differential resonance-frequency shift between orthogonal arms is
-\begin{equation}
-\Delta\omega_{\rm loc}(t) = \gamma\,\xi(\omega)\,h_+(t)\,\phi_0^2,
-\label{eq:gw-deltaomega}
-\end{equation}
-where \(h_+\) is the plus-polarized GW strain and \(\phi_0 = \langle\phi\rangle_0\) is the vacuum scalar field amplitude.
-The resulting DLT phase shift in the interferometer output is
-\begin{equation}
-\Delta\phi_{\rm DLT} = C\,\xi(\omega)\,h_+(t)\,\tau,
-\label{eq:gw-phase}
-\end{equation}
-where \(\tau = 2L/c\) is the round-trip light travel time for arm length \(L\), and the dimensionless constant
-\begin{equation}
-C = \gamma\,\phi_0^2\,(2L/c)
-\label{eq:gw-constant}
-\end{equation}
-absorbs the coupling strength, scalar field amplitude, and interferometer geometry. This adds coherently to the
-standard General Relativistic strain signal, producing a narrow-band resonant excess strain peaked at \(\omega^*\) with
-amplitude scaling as \(\alpha\xi_0 h\).
-The entire GW-induced signal is a pure Type I relative phase shift: no test-mass displacement (Type II) occurs, and
-data analysis constitutes informational re-localization (Type III) governed by Landauer's bound.
-
-\section{Conclusion}
-Dynamic Location Theory establishes that \textbf{location is a property of the object} by identifying the dominant
-resonance frequency \(\omega_{\rm loc}\) of the coupled matter-scalar system as the fundamental localization variable.
-This single principle unifies spatial position, temporal re-localization, and memory under one mathematical framework,
- recovers standard quantum and classical predictions in appropriate limits, and makes concrete falsifiable predictions
- accessible to near-term experiments in atomic-clock, matter-wave, and gravitational-wave interferometry. Material
-transport remains energetically forbidden; informational access is not.
-
-\section*{Acknowledgments}
-This work was conducted independently at Vers3Dynamics and the R.A.I.N. Lab, Washington, D.C.
-
-\begin{thebibliography}{10}
-\bibitem{woodyard2026location}
-C. Woodyard, ``Location Is a Dynamic Variable: A Scalar-Field Framework for Emergent Localization,'' Vers3Dynamics,
-Jan. 2026, doi: 10.5281/zenodo.18263032.
-\bibitem{woodyard2026temporal}
-C. Woodyard, ``Temporal Re-Localization via Scalar Resonance,'' Vers3Dynamics, R.A.I.N. Lab, Jan. 2026, doi:
-10.5281/zenodo.18281960.
-\bibitem{epr}
-A. Einstein, B. Podolsky, and N. Rosen, ``Can quantum-mechanical description of physical reality be considered
-complete?'' \emph{Phys. Rev.}, vol. 47, no. 10, pp. 777--780, 1935.
-\bibitem{bell}
-J. S. Bell, ``On the Einstein-Podolsky-Rosen paradox,'' \emph{Physics}, vol. 1, no. 3, pp. 195--200, 1964.
-\bibitem{morris}
-M. S. Morris, K. S. Thorne, and U. Yurtsever, ``Wormholes, time machines, and the weak energy condition,'' \emph{Phys.
-Rev. Lett.}, vol. 61, no. 13, pp. 1446--1449, 1988.
-\bibitem{zurek}
-W. H. Zurek, ``Decoherence, einselection, and the quantum origins of the classical,'' \emph{Rev. Mod. Phys.}, vol. 75,
-no. 3, pp. 715--775, 2003.
-\bibitem{landauer}
-R. Landauer, ``Irreversibility and heat generation in the computing process,'' \emph{IBM J. Res. Dev.}, vol. 5, no. 3,
-pp. 183--191, 1961.
-\bibitem{birrell}
-N. D. Birrell and P. C. W. Davies, \emph{Quantum Fields in Curved Space}. Cambridge, U.K.: Cambridge Univ. Press,
-1982.
-\bibitem{damour}
-T. Damour and G. Esposito-Farèse, ``Tensor-multi-scalar theories of gravitation,'' \emph{Class. Quantum Grav.}, vol.
-9, no. 9, pp. 2093--2176, 1992.
-\bibitem{feynman}
-R. P. Feynman, ``Simulating physics with computers,'' \emph{Int. J. Theor. Phys.}, vol. 21, no. 6/7, pp. 467--488,
-1982.
-\end{thebibliography}
-
-\end{document}
+  <script>
+    // Optional: simple Tailwind script (already loaded via CDN)
+    console.log('%cDynamic Location Theory site loaded', 'color:#10b981; font-family:monospace');
+  </script>
+</body>
+</html>
