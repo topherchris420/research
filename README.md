@@ -6,8 +6,8 @@
 Vers3Dynamics • R.A.I.N. Lab  
 Washington, D.C., USA
 
-[![PDF](https://img.shields.io/badge/PDF-Download%20Paper-blue?style=flat-square&logo=adobeacrobatreader)](research/master/blog/137.pdf)
-[![arXiv-style](https://img.shields.io/badge/arXiv-Style%20Preprint-orange?style=flat-square)](https://github.com/topherchris420/research/master/blob/137.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Download%20Paper-blue?style=flat-square&logo=adobeacrobatreader)](137.pdf)
+[![arXiv-style](https://img.shields.io/badge/arXiv-Style%20Preprint-orange?style=flat-square)](https://github.com/topherchris420/137.pdf)
 
 ---
 
