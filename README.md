@@ -1,44 +1,51 @@
 # Dynamic Location Theory (DLT)
 
-**A Frequency-Based Framework for Spatial Position, Temporal Re-Localization, and Informational Retrieval**
+**A frequency-based framework for spatial position, temporal re-localization, and informational retrieval**
 
-**Christopher Woodyard**  
-Vers3Dynamics • R.A.I.N. Lab  
+**Christopher Woodyard**<br>
+Vers3Dynamics &middot; R.A.I.N. Lab<br>
 Washington, D.C., USA
 
-[![PDF](https://img.shields.io/badge/PDF-Download%20Paper-blue?style=flat-square&logo=adobeacrobatreader)](137.pdf)
-[![arXiv-style](https://img.shields.io/badge/arXiv-Style%20Preprint-orange?style=flat-square)](https://github.com/topherchris420/research/blob/master/137.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Read%20Paper-blue?style=flat-square&logo=adobeacrobatreader)](137.pdf)
+[![Repository](https://img.shields.io/badge/GitHub-Repository-black?style=flat-square&logo=github)](https://github.com/topherchris420/research)
 
 ---
 
+## Research posture
+
+This repository presents **Dynamic Location Theory** as a research framework worth investigating. The core claim is that **location is a property of the object**, expressed through resonance between matter and a background scalar field rather than through external spacetime labels alone.
+
+The work is presented as a serious, falsifiable proposal with direct paths into the paper, citation, equations, and repository source.
+
 ## Abstract
 
-This paper addresses spatial localization and temporal re-localization under a single-resonance model in which **location is a property of the object**, determined by resonance between matter and a background scalar field. Rather than treating position and time as external labels on a spacetime manifold, we encode the spatiotemporal position of any physical system in the dominant resonance frequency of its coupled matter-scalar-field state.
+The paper unifies spatial localization and temporal re-localization under a single-resonance model in which the spatiotemporal position of a physical system is encoded in the dominant resonance frequency of its coupled matter-scalar-field state.
 
-The framework supplies concrete, falsifiable predictions for atomic-clock interferometry, matter-wave interferometry, and gravitational-wave detection.
+The framework supplies concrete predictions for:
 
-## Key Features
+- atomic-clock interferometry
+- matter-wave interferometry
+- gravitational-wave detection
 
-- **Type I (Parallel/Branch)**: Pure phase shifts between resonant states (low energy)
-- **Type II (Material)**: Macroscopic displacement of mass-energy (energetically forbidden)
-- **Type III (Informational)**: Memory & data retrieval (respects Landauer’s principle)
-- Full mathematical derivation of Type I re-localization
-- Explicit application to LIGO/Virgo/KAGRA/LISA gravitational-wave detectors
+## Quick links
 
-## Quick Links
-
-- **[Vers3Dynamics Research Hub](https://github.com/topherchris420/james_library)**
+- [Read the paper](137.pdf)
+- [Research website source](https://github.com/topherchris420/research)
+- [R.A.I.N. Lab repository](https://github.com/topherchris420/james_library)
 
 ## Citation
 
 ```bibtex
 @misc{woodyard2026dlt,
-  author       = {Christopher Woodyard},
-  title        = {Dynamic Localization Across Space and Time: A Frequency-Based Framework},
-  year         = {2026},
-  publisher    = {Vers3Dynamics, R.A.I.N. Lab},
-  url          = {https://vers3dynamics.com}
+  author    = {Christopher Woodyard},
+  title     = {Dynamic Localization Across Space and Time: A Frequency-Based Framework},
+  year      = {2026},
+  doi       = {10.5281/zenodo.18263032},
+  publisher = {Vers3Dynamics, R.A.I.N. Lab},
+  url       = {https://vers3dynamics.com}
 }
+```
 
-## Website License
+## Website license
+
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
