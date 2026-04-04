@@ -182,7 +182,6 @@ body.research-body ::selection {
   max-width: 42rem;
 }
 
-.hero-summary,
 .media-copy p,
 .lead,
 .section-intro,
@@ -195,11 +194,6 @@ body.research-body ::selection {
 .signal-list li {
   color: var(--muted);
   line-height: 1.7;
-}
-
-.hero-summary {
-  margin: 18px 0 0;
-  max-width: 44rem;
 }
 
 .hero-note {
