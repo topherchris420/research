@@ -40,8 +40,6 @@ class ResearchSiteUxSpec(unittest.TestCase):
     def test_doi_link_is_actionable(self):
         self.assertIn('https://doi.org/10.5281/zenodo.18263032', HTML)
 
-    def test_doi_link_is_actionable(self):
-        self.assertIn('https://doi.org/10.5281/zenodo.18263032', HTML)
 
 
 if __name__ == '__main__':

@@ -49,3 +49,23 @@ The framework supplies concrete predictions for:
 ## Website license
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+
+## DLT simulation prototype (Python)
+
+A runnable prototype is included in `dlt_simulation.py` and models spatial position and temporal re-localization from resonance coupling.
+
+### Quick start
+
+```bash
+python dlt_simulation.py --num-objects 300 --steps 1500 --coupling 1.2 --animate
+```
+
+### Parameter controls
+
+- `--num-objects`: number of simulated objects
+- `--omega-min`, `--omega-max`: resonance frequency range
+- `--coupling`: interaction strength κ
+- `--noise`: phase perturbation amplitude
+- `--speed`: simulation drift speed
+- `--log-trajectories --save-log out.npz`: optional logging
