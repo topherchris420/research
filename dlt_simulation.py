@@ -139,7 +139,7 @@ def update_state(
         pad = np.zeros((n, dims - 2))
         drift = np.concatenate([drift, pad], axis=1)
 
-    x_new = state.x + params.dt * (drift + params.coupling * pull)
+    x_new = state.x + params.dt * (drift + params.coupling * pull / neighbor_count[:, None])
     x_new += rng.normal(0.0, params.position_noise, size=x_new.shape)
 
     t_res_new = state.t_res + params.dt * (
